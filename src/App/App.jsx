@@ -6,7 +6,6 @@ import {
   FaCalendarAlt,
   FaChevronDown,
 } from "react-icons/fa";
-import ListItem from "../components/listItem";
 import Lists from "../components/Lists";
 
 function App() {
@@ -32,14 +31,14 @@ function App() {
             <Lists data={generalList} />
           </section>
           <section className="sidebar__category">
-            <div className="accordion">
+            {/* <div className="accordion">
               <div className="accordion__toggle">
                 <li className="accordion__item">
                   <FaChevronDown className="accordion__item__icon accordion__item__active" />
                   <p className="accordion__item__text">Projects</p>
                 </li>
               </div>
-            </div>
+            </div> */}
           </section>
 
           <Lists data={projectList} />
@@ -51,6 +50,17 @@ function App() {
 }
 
 export default App;
+
+
+/* ***Challenge : Refactor 
+- ให้ 2 section render UI ที....
+- OptionA (2/5) : render UI ต่างกัน <Lists/> กับ <Accordion/>
+- OptionB (4/5) : render UI เดียวกัน เช่น  <Lists/> 
+- OptionC (5/5) : render <Lists/>  ภายใต้ <Accordion> <Lists/> <Accordion/>
+// ใช้ props.children
+
+*/
+
 
 // {/* sol 1 */}
 //           {/* <ul className="list">
