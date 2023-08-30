@@ -27,4 +27,40 @@ $sidebar-width: 300px;
 }
 }
 
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 30px;
+    height: calc(100vh - $header-height);
+}
 //Header
+
+
+.accordion{
+    // ELEMENT
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.8rem;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: 900;
+  
+      // MODIFIER
+      &__icon {
+        cursor: pointer;
+        transition: 1s;
+      }
+      
+      &__active{
+          transform: rotate(-90deg);
+      }
+
+      &__text {
+        font-weight: inherit;
+      }
+    }
+
+  }
