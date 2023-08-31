@@ -6,17 +6,17 @@ import TodoForm from "./TodoForm";
 import styles from "./TodoLists.module.scss";
 
 function TodoLists() {
-  const [isOpenEdit, setIsOprnEdit] = useState(false);
+  const [isOpenForm, setIsOpenForm] = useState(false);
 
   //2# JS FN (Logic)
   const handleClick = function () {
-    setIsOprnEdit(!isOpenEdit);
+    setIsOpenForm(!isOpenForm);
   };
 
   return (
     <ul className={styles.todo__lists}>
-      {isOpenEdit ? (
-        <TodoForm textSubmit="Edit Task"/>
+      {isOpenForm ? (
+        <TodoForm textSubmit="Edit Task" setIsOpenForm={setIsOpenForm}/>
       ) : (
         <li className={styles.todo}>
           <div

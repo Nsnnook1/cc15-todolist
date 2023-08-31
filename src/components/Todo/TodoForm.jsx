@@ -25,6 +25,7 @@ function TodoForm(props) {
 
   const handleChangeInput = function (event) {
     // console.log("user typing.....", event.target.value);
+    if (isError) setisError(false);
     setTaskInput(event.target.value);
   };
 
@@ -33,6 +34,12 @@ function TodoForm(props) {
     //case1 : submit ได้
     //case2 : submit ไม่ได้ => show error!!!
     event.preventDefault();
+
+    if (taskInput.trim() === "") {
+      console.log("error");
+      setisError(true);
+    }
+    return;
   };
 
   const handleCancel = function (event) {
