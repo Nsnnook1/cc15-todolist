@@ -20,24 +20,34 @@ CC1 - Form Handle
 */
 
 function TodoForm(props) {
-  const [isError, setisError] = useState(false);
+  const [isError, setisError] = useState(true);
+  const [taskInput, setTaskInput] = useState("");
 
-  const handleSubmit = function (event) {
-    event.preventDefault();
-    console.log("submit");
+  const handleChangeInput = function (event) {
+    // console.log("user typing.....", event.target.value);
+    setTaskInput(event.target.value);
   };
 
-  // const [isCancle, setIsCancle] = useState();
+  const handleSubmit = function (event) {
+    //FormValidation
+    //case1 : submit ได้
+    //case2 : submit ไม่ได้ => show error!!!
+    event.preventDefault();
+  };
 
   const handleCancel = function (event) {
-    props.setIsOpenForm(false)
-    console.log("cancle");
+    props.setIsOpenForm(false);
   };
 
   return (
     <form onSubmit={handleSubmit} className={styles.todo__form__container}>
       {/*	Body */}
-      <input className={styles.todo__form__input} placeholder="Task Name" />
+      <input
+        className={styles.todo__form__input}
+        placeholder="Task Name"
+        value={taskInput}
+        onChange={handleChangeInput}
+      />
 
       {/*Form Footer */}
       <div className={styles.todo__form__footer}>
