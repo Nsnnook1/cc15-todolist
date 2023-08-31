@@ -3,7 +3,10 @@ import { Button } from "../Common/Button/Button";
 import { useState } from "react";
 
 /*
-props = {textSubmit :string}
+props = {
+  textSubmit :string
+  setIsOpenForm : FN
+}
 
 */
 /*
@@ -15,6 +18,7 @@ CC1 - Form Handle
   - Type='submit'
   - Type='button'
 */
+
 function TodoForm(props) {
   const [isError, setisError] = useState(false);
 
@@ -23,8 +27,10 @@ function TodoForm(props) {
     console.log("submit");
   };
 
-  const [isCancle, setIsCancle] = useState();
+  // const [isCancle, setIsCancle] = useState();
+
   const handleCancel = function (event) {
+    props.setIsOpenForm(false)
     console.log("cancle");
   };
 

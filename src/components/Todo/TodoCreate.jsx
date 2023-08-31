@@ -31,17 +31,17 @@ const [state,setState] = usestate(initialState:any)
 //1# Fn component : FC (Render)
 function TodoCreate() {
   //Hook Fn
-  const [isOpenForm, setIsOprnForm] = useState(false);
+  const [isOpenForm, setIsOpenForm] = useState(false);
 
   //2# JS FN (Logic)
   const handleClick = function () {
-    setIsOprnForm(!isOpenForm);
+    setIsOpenForm(!isOpenForm);
   };
 
   return (
     <>
       {isOpenForm ? (
-        <TodoForm textSubmit="Add Task" />
+        <TodoForm textSubmit="Add Task" setIsOpenForm={setIsOpenForm} />
       ) : (
         <div className={styles.todo__create} onClick={handleClick}>
           <div className={styles.todo__create__button}>
