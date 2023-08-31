@@ -1,12 +1,16 @@
 import "./App.scss";
-import Header from "../components/header";
 import {
   FaInbox,
   FaCalendar,
   FaCalendarAlt,
   FaChevronDown,
 } from "react-icons/fa";
+
+import Header from "../components/header";
 import Lists from "../components/Lists";
+import TodoHeader from "../components/Todo/TodoHeader";
+import TodoCreate from "../components/Todo/TodoCreate";
+import TodoLists from "../components/Todo/TodoLists";
 
 function App() {
   const generalList = [
@@ -31,26 +35,30 @@ function App() {
             <Lists data={generalList} />
           </section>
           <section className="sidebar__category">
-            {/* <div className="accordion">
+            <div className="accordion">
               <div className="accordion__toggle">
                 <li className="accordion__item">
                   <FaChevronDown className="accordion__item__icon accordion__item__active" />
                   <p className="accordion__item__text">Projects</p>
                 </li>
               </div>
-            </div> */}
+            </div>
           </section>
 
           <Lists data={projectList} />
         </aside>
       </div>
-      <div className="todo__content">TodoContent</div>
+      <div className="todo__content">
+        <main className="todo__container"></main>
+          <TodoHeader />
+          <TodoCreate/>
+          <TodoLists/>
+      </div>
     </div>
   );
 }
 
 export default App;
-
 
 /* ***Challenge : Refactor 
 - ให้ 2 section render UI ที....
@@ -60,7 +68,6 @@ export default App;
 // ใช้ props.children
 
 */
-
 
 // {/* sol 1 */}
 //           {/* <ul className="list">

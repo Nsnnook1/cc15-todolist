@@ -64,3 +64,10 @@ $sidebar-width: 300px;
     }
 
   }
+
+  .todo__container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 30px;
+  }
